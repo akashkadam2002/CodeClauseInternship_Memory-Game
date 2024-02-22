@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4c531;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background: #edd37c;
+    padding: 38px 60px;
+}
+
+h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #111;
+    letter-spacing: .01em;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: black;
+}
+
+.time {
+    margin-left: 350px;
+}
+
+.reset {
+    padding: 15px 20px;
+    color: rgb(53, 137, 53);
+    background-color: #fff;
+    border: none;
+    font-size: 1.8rem;
+    letter-spacing: .01em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reset:focus {
+    color: #fff;
+    background: green;
+}
+
+.game {
+    width: 450px;
+    height: 440px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    background: #fff;
+    transition: 0.25s;
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #d6b441;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.boxOpen::after,
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .main {
+        height: 30px;
+        font-size: 1.5rem;
+    }
+
+    .time {
+        font-size: 1rem;
+    }
+
+    .game {
+        width: 350px;
+        height: 340px;
+    }
+
+    .item {
+        width: 70px;
+        height: 70px;
+    }
+
+    p {
+        margin-top: 70px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .main {
+        height: 30px;
+        font-size: 1.2rem;
+    }
+
+    .time {
+        margin-right: 18px;
+        font-size: 0.8rem;
+    }
+
+    .game {
+        width: 300px;
+        height: 290px;
+    }
+
+    .item {
+        width: 65px;
+        height: 65px;
+    }
+
+    p {
+        margin-top: 70px;
+        font-size: 17px;
+    }
+}
+
+p {
+    margin-top: 70px;
+    font-size: 25px;
+}
